@@ -1,4 +1,4 @@
-package lessons._33_DronesAppl;
+package telran.lessons._33_DronesAppl;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;

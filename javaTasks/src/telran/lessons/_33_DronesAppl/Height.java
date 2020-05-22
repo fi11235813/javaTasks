@@ -1,4 +1,4 @@
-package lessons._33_DronesAppl;
+package telran.lessons._33_DronesAppl;
 
 public class Height {
 	
