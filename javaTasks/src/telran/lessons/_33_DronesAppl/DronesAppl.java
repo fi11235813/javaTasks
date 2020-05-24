@@ -14,7 +14,7 @@ public class DronesAppl {
 	static Drone[] drones;
 	static List<Drone> dronesInAir;
 	static Queue<Drone> dronesInQueue;
-	static final Height[] heights = new Height[N_HEIGHTS];
+	static final Height[] heights = new Height[N_HEIGHTS];	
 
 		public static void main(String[] args) {
 			preProcessing();
@@ -36,7 +36,6 @@ public class DronesAppl {
 			.flatMap(h -> h.getValue().stream()).collect(Collectors.toList());
 			
 			System.out.println(list);
-			
 }
 
 		private static void displayHeightsCountsInfo() {

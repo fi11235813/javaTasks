@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.time.YearMonth;
 import java.time.format.TextStyle;
-import java.time.temporal.Temporal;
 import java.util.Locale;
 
 public class CalendarAppl {
