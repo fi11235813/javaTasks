@@ -13,7 +13,6 @@ public class CopyBigFilesImplBased implements CopyBigFilesInterface {
 	public void copy(Path filePath, Path destPath) {
 		try {
 			Files.copy(filePath, destPath, StandardCopyOption.REPLACE_EXISTING);
-			Files.delete(destPath);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

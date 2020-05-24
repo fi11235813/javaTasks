@@ -22,7 +22,6 @@ public class CopyBigFilesImplInputOutput implements CopyBigFilesInterface {
 				output.write(buffer, 0, length);
 				length = input.read(buffer, 0, bufferSize);
 			}
-			Files.delete(destPath);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

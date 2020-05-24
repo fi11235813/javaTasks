@@ -14,10 +14,10 @@ public class CopyBigFilesPerformanceTestAppl {
 		cBFPBased.run();
 		System.out.println(cBFPBased.toString());
 		
-//		CopyBigFilesPerformance cBFPInpOutp1 = 
-//				new CopyBigFilesPerformance("Input\\Output", FILE_PATH, DEST_PETH, new CopyBigFilesImplInputOutput(), 100);
-//		cBFPInpOutp1.run();
-//		System.out.println(cBFPInpOutp1.toString());
+		CopyBigFilesPerformance cBFPInpOutp1 = 
+				new CopyBigFilesPerformance("Input\\Output", FILE_PATH, DEST_PETH, new CopyBigFilesImplInputOutput(), 100);
+		cBFPInpOutp1.run();
+		System.out.println(cBFPInpOutp1.toString());
 		
 		CopyBigFilesPerformance cBFPInpOutp2 = 
 				new CopyBigFilesPerformance("Input\\Output", FILE_PATH, DEST_PETH, new CopyBigFilesImplInputOutput(), 100_000_000);
