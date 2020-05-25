@@ -19,13 +19,13 @@ public class BullsAndCows {
 	
 	public BullsAndCows() {
 		GUESS_NUMBERS = creatGuessNumbers();
+		historyMap.put(0, "");
 	}
 
 
 	private ArrayList<Integer> creatGuessNumbers() {
 		var res = new ArrayList<Integer>();
 		new Random().ints(1, 10).distinct().limit(ALL_BULLS_QUANTITY).forEach(res::add);
-		historyMap.put(0, "");
 		return res;
 	}
 	
