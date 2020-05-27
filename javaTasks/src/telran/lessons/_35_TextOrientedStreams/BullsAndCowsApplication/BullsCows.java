@@ -1,11 +1,11 @@
 package telran.lessons._35_TextOrientedStreams.BullsAndCowsApplication;
 
-public enum BullsCowsEnum {
-	EXIT("exit"), TEST_MODE("test"), COWS("cows"), BULLS("bulls");
+public enum BullsCows {
+	COWS("cows"), BULLS("bulls");
 
 	String value;
 
-	BullsCowsEnum(String value) {
+	BullsCows(String value) {
 		this.value = value;
 	}
 
