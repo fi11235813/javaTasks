@@ -3,6 +3,8 @@ package telran.lessons._38_TcpJava.guessGameTcpClient;
 import java.io.Closeable;
 import java.util.Scanner;
 
+import telran.lessons._38_TcpJava.bullsCowsGameTcpServer.BullsCowsGameImpl;
+
 public class TcpGameConsoleAppl {
 	static final String HOST = "localhost";
 	static final int PORT = 4000;
@@ -32,6 +34,7 @@ public class TcpGameConsoleAppl {
 					runGame(scanner, gameProxy);
 				}
 			} finally {
+				if (gameProxy instanceof Closeable)
 				((Closeable) gameProxy).close();
 			}
 		} catch (Exception e) {
@@ -40,7 +43,7 @@ public class TcpGameConsoleAppl {
 		return res;
 	}
 
-	private static void runGame(Scanner scanner, GuessGame gameProxy) {
+	private static void runGame(Scanner scanner,  GuessGame gameProxy) {
 		String consoleInput;
 		while (true) {
 			System.out.println(gameProxy.prompt());
