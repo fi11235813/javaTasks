@@ -7,14 +7,13 @@ import java.time.format.TextStyle;
 import java.util.Locale;
 
 public class CalendarAppl {
-	//
 	private static Locale locale = Locale.US;
 	private static int columnWidth = 4;
 	private static DayOfWeek[] daysOfWeek = DayOfWeek.values();
 	
 	public static void main(String[] args) {
 		int[] yearMonth; //[0] - number of year, 
-	//	[1] - number of month
+						//	[1] - number of month
 		try {
 			yearMonth = getYearMonth(args);
 			printCalendar(yearMonth[0], yearMonth[1]);
