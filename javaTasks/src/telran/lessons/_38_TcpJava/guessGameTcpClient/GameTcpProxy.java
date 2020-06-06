@@ -29,13 +29,13 @@ public class GameTcpProxy extends TcpClientJava implements GuessGame {
 	public boolean isFinished() {
 
 		boolean res = sendRequest("is_finished", "");
-		if (res) {
-			try {
-				socket.close();
-			} catch (IOException e) {
-				throw new RuntimeException("Closing socket..." + e.getMessage());
-			}
-		}
+//		if (res) {
+//			try {
+//				socket.close();
+//			} catch (IOException e) {
+//				throw new RuntimeException("Closing socket..." + e.getMessage());
+//			}
+//		}
 		return res;
 	}
 

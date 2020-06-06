@@ -10,9 +10,9 @@ import java.net.UnknownHostException;
 
 public class TcpClientJava implements Closeable {
 
-	protected ObjectOutputStream output;
-	protected ObjectInputStream input;
-	protected Socket socket;
+	private ObjectOutputStream output;
+	private ObjectInputStream input;
+	private Socket socket;
 
 	public TcpClientJava(String hostName, int port) {
 		try {
@@ -27,33 +27,26 @@ public class TcpClientJava implements Closeable {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	protected <T> T sendRequest(String requestType, Serializable requestData) {
-		
-			try {
+		try {
 			output.writeObject(new RequestJava(requestType, requestData));
 			ResponseJava response = (ResponseJava) input.readObject();
 			if (response.code == TcpResponseCode.UNKNOWN) {
-				close();
-				throw new RuntimeException("Unknown request");
+				throw new RuntimeException("Unknown request " + response.responseData.toString());
 			}
 
 			if (response.code == TcpResponseCode.WRONG_REQUEST) {
-				close();
-				throw new RuntimeException("WRONG_REQUEST");
+				throw new RuntimeException("WRONG_REQUEST " + response.responseData.toString());
 			}
 			return (T) response.responseData;
-		} catch (IOException e) {
-			throw new RuntimeException("Start game..." + e.getMessage());
-		} catch (ClassNotFoundException e) {
-			throw new RuntimeException("Class not found..." + e.getMessage());
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
 		}
-
 	}
 
 	@Override
 	public void close() throws IOException {
-		output.close();
-		input.close();
 		socket.close();
 	}
 }
