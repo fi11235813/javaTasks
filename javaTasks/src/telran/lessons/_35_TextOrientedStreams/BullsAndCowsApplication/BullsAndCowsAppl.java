@@ -46,7 +46,7 @@ public class BullsAndCowsAppl {
 			nextMove(line);
 			
 			if (moveResult.getOrDefault(BullsCows.BULLS, 0) == game.getALL_BULLS_QUANTITY()) {
-				System.out.println("Congratulations you have guessed number for " + moves.size() + "move(s)");
+				System.out.println("Congratulations you have guessed number for " + moves.size() + " move(s)");
 				finishGame();
 				break;
 			}
