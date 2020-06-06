@@ -31,7 +31,7 @@ public class PersonRestoreAppl {
 	private static void displayEmployeesSalaryMoreAvg(List<Person> persons, Map<String, Double> avgSal) {
 		System.out.println("Employees whose salary is higher than the average for the company");
 		String str = "Company name: %s, Employees: ";
-		getEmployee(persons).collect(Collectors.groupingBy(v -> v.getCompany()
+		getEmployeesStream(persons).collect(Collectors.groupingBy(v -> v.getCompany()
 				, Collectors.filtering(v -> Double.compare(v.getSalary(), avgSal.get(v.getCompany())) > 0, Collectors.toList())))
 				.forEach((k, v) -> {
 					if (!v.isEmpty())
@@ -46,7 +46,7 @@ public class PersonRestoreAppl {
 	}
 
 	private static Map<String, Double> getAvgSalaryByTheCompanies(List<Person> persons) {
-		return getEmployee(persons).collect(Collectors.groupingBy(
+		return getEmployeesStream(persons).collect(Collectors.groupingBy(
 				v -> v.getCompany(), Collectors.averagingInt(v -> v.getSalary())));
 	}
 
@@ -58,7 +58,7 @@ public class PersonRestoreAppl {
 				.forEach((k) -> System.out.println(String.format(str, k.getKey(), k.getValue())));
 	}
 	
-	private static Stream<Employee> getEmployee(List<Person> persons) {
+	private static Stream<Employee> getEmployeesStream(List<Person> persons) {
 		return persons.stream().filter(v -> v instanceof Employee).map(v -> (Employee) v);
 	}
 
