@@ -15,6 +15,8 @@ public abstract class AbstractPerformanceTest {
 		runTest();
 		long endTime = System.currentTimeMillis();
 		lastResult = endTime - startTime;
+		
+		System.out.println(toString());
 	}
 
 	protected abstract void runTest();
