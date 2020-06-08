@@ -1,10 +1,10 @@
-package telran.lessons._40_EmployeesClientApplication.employees.controllers;
+package telran.lessons._40_EmployeesClientApplication.controllers;
 
 import telran.lessons._39_MenuItemsInputOutput.ConsoleInputOutput;
 import telran.lessons._39_MenuItemsInputOutput.api.*;
-import telran.lessons._40_EmployeesClientApplication.employees.api.EmployeesService;
-import telran.lessons._40_EmployeesClientApplication.employees.items.*;
-import telran.lessons._40_EmployeesClientApplication.employees.service.EmployeesServiceMapsImpl;
+import telran.lessons._40_EmployeesClientApplication.api.EmployeesService;
+import telran.lessons._40_EmployeesClientApplication.items.*;
+import telran.lessons._40_EmployeesClientApplication.service.EmployeesServiceMapsImpl;
 
 public class EmployeesClientAppl {
 	static InputOutput inputOutput = new ConsoleInputOutput();

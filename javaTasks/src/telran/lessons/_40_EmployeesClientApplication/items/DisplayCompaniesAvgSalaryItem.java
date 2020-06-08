@@ -1,7 +1,7 @@
-package telran.lessons._40_EmployeesClientApplication.employees.items;
+package telran.lessons._40_EmployeesClientApplication.items;
 
 import telran.lessons._39_MenuItemsInputOutput.api.InputOutput;
-import telran.lessons._40_EmployeesClientApplication.employees.api.EmployeesService;
+import telran.lessons._40_EmployeesClientApplication.api.EmployeesService;
 
 public class DisplayCompaniesAvgSalaryItem extends EmployeesItem {
 

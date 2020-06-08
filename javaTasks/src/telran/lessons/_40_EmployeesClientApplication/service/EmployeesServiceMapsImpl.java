@@ -1,4 +1,4 @@
-package telran.lessons._40_EmployeesClientApplication.employees.service;
+package telran.lessons._40_EmployeesClientApplication.service;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -6,10 +6,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import telran.lessons._40_EmployeesClientApplication.employees.api.EmployeesService;
-import telran.lessons._40_EmployeesClientApplication.employees.dto.CompanySalary;
-import telran.lessons._40_EmployeesClientApplication.employees.dto.Employee;
-import telran.lessons._40_EmployeesClientApplication.employees.dto.EmployeesReturnCodes;
+import telran.lessons._40_EmployeesClientApplication.api.EmployeesService;
+import telran.lessons._40_EmployeesClientApplication.dto.*;
 
 public class EmployeesServiceMapsImpl implements EmployeesService {
 	private HashMap<Long, Employee> employees = new HashMap<>();

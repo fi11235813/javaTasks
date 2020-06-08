@@ -1,6 +1,6 @@
-package telran.lessons._40_EmployeesClientApplication.employees.items;
+package telran.lessons._40_EmployeesClientApplication.items;
 
-import static telran.lessons._40_EmployeesClientApplication.employees.api.EmployeeApi.*;
+import static telran.lessons._40_EmployeesClientApplication.api.EmployeeApi.*;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -8,8 +8,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 import telran.lessons._39_MenuItemsInputOutput.api.InputOutput;
-import telran.lessons._40_EmployeesClientApplication.employees.api.EmployeesService;
-import telran.lessons._40_EmployeesClientApplication.employees.dto.Employee;
+import telran.lessons._40_EmployeesClientApplication.api.EmployeesService;
+import telran.lessons._40_EmployeesClientApplication.dto.Employee;
 
 public class RandomGenerationItem extends EmployeesItem {
 

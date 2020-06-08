@@ -1,4 +1,4 @@
-package telran.lessons._40_EmployeesClientApplication.employees.api;
+package telran.lessons._40_EmployeesClientApplication.api;
 
 public class EmployeeApi {
 	public static final int MIN_ID = 10_000;

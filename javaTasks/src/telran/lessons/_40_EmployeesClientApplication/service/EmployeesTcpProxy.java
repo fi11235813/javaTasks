@@ -1,13 +1,12 @@
-package telran.lessons._40_EmployeesClientApplication.employees.service;
+package telran.lessons._40_EmployeesClientApplication.service;
 
 import java.util.List;
 import java.util.Map;
 
 import telran.lessons._38_TcpJava.net.TcpClientJava;
-import telran.lessons._40_EmployeesClientApplication.employees.api.EmployeesService;
-import telran.lessons._40_EmployeesClientApplication.employees.dto.CompanySalary;
-import telran.lessons._40_EmployeesClientApplication.employees.dto.Employee;
-import telran.lessons._40_EmployeesClientApplication.employees.dto.EmployeesReturnCodes;
+import telran.lessons._40_EmployeesClientApplication.api.EmployeesService;
+import telran.lessons._40_EmployeesClientApplication.dto.*;
+
 
 public class EmployeesTcpProxy extends TcpClientJava implements EmployeesService {
 

@@ -1,10 +1,10 @@
-package telran.lessons._40_EmployeesClientApplication.employees.items;
+package telran.lessons._40_EmployeesClientApplication.items;
 
 import java.io.Closeable;
 import java.io.IOException;
 
 import telran.lessons._39_MenuItemsInputOutput.api.InputOutput;
-import telran.lessons._40_EmployeesClientApplication.employees.api.EmployeesService;
+import telran.lessons._40_EmployeesClientApplication.api.EmployeesService;
 
 public class ExitItem extends EmployeesItem {
 

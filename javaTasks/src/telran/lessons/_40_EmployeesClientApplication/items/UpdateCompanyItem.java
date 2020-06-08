@@ -1,9 +1,9 @@
-package telran.lessons._40_EmployeesClientApplication.employees.items;
+package telran.lessons._40_EmployeesClientApplication.items;
 
 import telran.lessons._39_MenuItemsInputOutput.api.InputOutput;
-import telran.lessons._40_EmployeesClientApplication.employees.api.EmployeesService;
-import telran.lessons._40_EmployeesClientApplication.employees.dto.Employee;
-import telran.lessons._40_EmployeesClientApplication.employees.dto.EmployeesReturnCodes;
+import telran.lessons._40_EmployeesClientApplication.api.EmployeesService;
+import telran.lessons._40_EmployeesClientApplication.dto.Employee;
+import telran.lessons._40_EmployeesClientApplication.dto.EmployeesReturnCodes;
 
 public class UpdateCompanyItem extends EmployeesItem {
 

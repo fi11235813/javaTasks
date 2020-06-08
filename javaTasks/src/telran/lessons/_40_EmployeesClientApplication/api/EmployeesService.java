@@ -1,11 +1,11 @@
-package telran.lessons._40_EmployeesClientApplication.employees.api;
+package telran.lessons._40_EmployeesClientApplication.api;
 
 import java.util.List;
 import java.util.Map;
 
-import telran.lessons._40_EmployeesClientApplication.employees.dto.CompanySalary;
-import telran.lessons._40_EmployeesClientApplication.employees.dto.Employee;
-import telran.lessons._40_EmployeesClientApplication.employees.dto.EmployeesReturnCodes;
+import telran.lessons._40_EmployeesClientApplication.dto.CompanySalary;
+import telran.lessons._40_EmployeesClientApplication.dto.Employee;
+import telran.lessons._40_EmployeesClientApplication.dto.EmployeesReturnCodes;
 
 public interface EmployeesService {
 	EmployeesReturnCodes addEmployee(Employee empl);

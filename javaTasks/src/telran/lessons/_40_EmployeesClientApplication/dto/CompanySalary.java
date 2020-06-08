@@ -1,4 +1,4 @@
-package telran.lessons._40_EmployeesClientApplication.employees.dto;
+package telran.lessons._40_EmployeesClientApplication.dto;
 
 import java.io.Serializable;
 
