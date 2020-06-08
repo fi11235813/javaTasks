@@ -21,6 +21,11 @@ public class AddEmployeeItem extends AbstractEmployeesItem {
 	@Override
 	public void perform() {
 		String email = inputOutput.inputEmail("Enter email of new Employee");
+		if (employees.containsKey(email)) {
+			inputOutput.displayLine("already exists");
+			return;
+		}
+		
 		String phone = inputOutput.inputPhoneNumber("Enter phone of new Employee");
 
 		Set<String> titleSet = Set.of("Developer", "QA_Tester", "Development_Manager", "QA_Manager");
@@ -30,12 +35,9 @@ public class AddEmployeeItem extends AbstractEmployeesItem {
 		LocalDate birthDate = inputOutput.inputDate("enter date of birth in format YYYY-MM-DD");
 		int salary = inputOutput.inputInteger("Enter salary");
 
-		Employee empl = employees.putIfAbsent(email, new Employee(email, phone, title, birthDate, salary));
+		employees.put(email, new Employee(email, phone, title, birthDate, salary));
 
-		if (empl == null)
-			inputOutput.display("added");
-		else
-			inputOutput.display("already exists");
+		inputOutput.displayLine("added");
 	}
 
 }

@@ -40,7 +40,7 @@ public interface InputOutput {
 		display(obj.toString() + "\n");
 	}
 
-	default Integer inputInteger(String prompt) throws NumberFormatException {
+	default Integer inputInteger(String prompt) {
 		return (Integer) inputObject(prompt, "Not a number", s -> Integer.parseInt(s));
 	}
 
@@ -48,7 +48,7 @@ public interface InputOutput {
 		return (String) inputObject(prompt, "Not from the list", s -> options.contains(s) ? s : null);
 	}
 
-	default LocalDate inputDate(String prompt) throws DateTimeParseException {
+	default LocalDate inputDate(String prompt) {
 		return (LocalDate) inputObject(prompt, "Not a date", s -> LocalDate.parse(s));
 	}
 
