@@ -4,13 +4,14 @@ import telran.lessons._39_MenuItemsInputOutput.ConsoleInputOutput;
 import telran.lessons._39_MenuItemsInputOutput.api.*;
 import telran.lessons._40_EmployeesClientApplication.api.EmployeesService;
 import telran.lessons._40_EmployeesClientApplication.items.*;
-import telran.lessons._40_EmployeesClientApplication.service.EmployeesServiceMapsImpl;
+import telran.lessons._40_EmployeesClientApplication.service.EmployeesTcpProxy;
 
 public class EmployeesClientAppl {
-	static InputOutput inputOutput = new ConsoleInputOutput();
-	static EmployeesService employees = new EmployeesServiceMapsImpl();
-		public static void main(String[] args) {
-			Item[] items = {
+	
+	public static void main(String[] args) {
+		InputOutput inputOutput = new ConsoleInputOutput();
+		EmployeesService employees = new EmployeesTcpProxy("localhost", 5000);
+		Item[] items = {
 					new AddEmployeeItem(employees, inputOutput),
 					new DisplayCompaniesAvgSalaryItem(employees, inputOutput),
 					new DisplayCompaniesGreaterAvgSalaryItem(employees, inputOutput),
