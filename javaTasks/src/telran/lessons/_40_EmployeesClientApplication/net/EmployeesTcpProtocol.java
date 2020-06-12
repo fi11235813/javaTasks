@@ -39,106 +39,75 @@ public class EmployeesTcpProtocol implements ProtocolJava {
 
 	@Override
 	public ResponseJava getResponse(RequestJava request) {
-		return funMap.getOrDefault(request.requestType, this::wrongRequest).apply(request.requestData);
+		try {
+			ResponseJava response = funMap.getOrDefault(request.requestType, this::wrongRequest)
+					.apply(request.requestData);
+			return response;
+		} catch (Exception e) {
+			return new ResponseJava(UNKNOWN, e.getMessage());
+		}
 	}
 
 	private ResponseJava addEmployee(Serializable requestData) {
-		try {
-			EmployeesReturnCodes returnCode = employees.addEmployee((Employee) requestData);
-			return new ResponseJava(OK, returnCode);
-		} catch (Exception e) {
-			return new ResponseJava(UNKNOWN, e.getMessage());
-		}
+		EmployeesReturnCodes returnCode = employees.addEmployee((Employee) requestData);
+		return new ResponseJava(OK, returnCode);
 	}
 
 	private ResponseJava removeEmployee(Serializable requestData) {
-		try {
-			EmployeesReturnCodes returnCode = employees.removeEmployee((long) requestData);
-			return new ResponseJava(OK, returnCode);
-		} catch (Exception e) {
-			return new ResponseJava(UNKNOWN, e.getMessage());
-		}
+		EmployeesReturnCodes returnCode = employees.removeEmployee((long) requestData);
+		return new ResponseJava(OK, returnCode);
 	}
 
 	private ResponseJava getEmployee(Serializable requestData) {
-		try {
-			Employee employee = employees.getEmployee((long) requestData);
-			return new ResponseJava(OK, employee);
-		} catch (Exception e) {
-			return new ResponseJava(UNKNOWN, e.getMessage());
-		}
+		Employee employee = employees.getEmployee((long) requestData);
+		return new ResponseJava(OK, employee);
 	}
 
+	@SuppressWarnings("unchecked")
 	private ResponseJava getEmployeesSalary(Serializable requestData) {
-		try {
-			int salaryFrom = ((Map<String, Integer>) requestData).get("salaryFrom");
-			int salaryTo = ((Map<String, Integer>) requestData).get("salaryTo");
-			Iterable<Employee> employeesSalary = employees.getEmployeesSalary(salaryFrom, salaryTo);
-			return new ResponseJava(OK, (Serializable) employeesSalary);
-		} catch (Exception e) {
-			return new ResponseJava(UNKNOWN, e.getMessage());
-		}
+		int salaryFrom = ((Map<String, Integer>) requestData).get("salaryFrom");
+		int salaryTo = ((Map<String, Integer>) requestData).get("salaryTo");
+		Iterable<Employee> employeesSalary = employees.getEmployeesSalary(salaryFrom, salaryTo);
+		return new ResponseJava(OK, (Serializable) employeesSalary);
 	}
 
 	private ResponseJava getCompaniesAvgSalary(Serializable requestData) {
-		try {
-			List<CompanySalary> companiesAvgSalary = employees.getCompaniesAvgSalary();
-			return new ResponseJava(OK, (Serializable) companiesAvgSalary);
-		} catch (Exception e) {
-			return new ResponseJava(UNKNOWN, e.getMessage());
-		}
+		List<CompanySalary> companiesAvgSalary = employees.getCompaniesAvgSalary();
+		return new ResponseJava(OK, (Serializable) companiesAvgSalary);
 	}
 
 	private ResponseJava getEmployeesGroupedBySalary(Serializable requestData) {
-		try {
-			Map<String, List<Employee>> employeesGroupedBySalary = employees
-					.getEmployeesGroupedBySalary((int) requestData);
-			return new ResponseJava(OK, (Serializable) employeesGroupedBySalary);
-		} catch (Exception e) {
-			return new ResponseJava(UNKNOWN, e.getMessage());
-		}
+		Map<String, List<Employee>> employeesGroupedBySalary = employees.getEmployeesGroupedBySalary((int) requestData);
+		return new ResponseJava(OK, (Serializable) employeesGroupedBySalary);
 	}
 
 	private ResponseJava getCompaniesGreaterAvgSalary(Serializable requestData) {
-		try {
-			List<CompanySalary> companiesGreaterAvgSalary = employees.getCompaniesGreaterAvgSalary();
-			return new ResponseJava(OK, (Serializable) companiesGreaterAvgSalary);
-		} catch (Exception e) {
-			return new ResponseJava(UNKNOWN, e.getMessage());
-		}
+		List<CompanySalary> companiesGreaterAvgSalary = employees.getCompaniesGreaterAvgSalary();
+		return new ResponseJava(OK, (Serializable) companiesGreaterAvgSalary);
 	}
 
+	@SuppressWarnings("unchecked")
 	private ResponseJava getEmployeesAges(Serializable requestData) {
-		try {
-			int ageFrom = ((Map<String, Integer>) requestData).get("ageFrom");
-			int ageTo = ((Map<String, Integer>) requestData).get("ageTo");
-			Iterable<Employee> employeesAges = employees.getEmployeesAges(ageFrom, ageTo);
-			return new ResponseJava(OK, (Serializable) employeesAges);
-		} catch (Exception e) {
-			return new ResponseJava(UNKNOWN, e.getMessage());
-		}
+		int ageFrom = ((Map<String, Integer>) requestData).get("ageFrom");
+		int ageTo = ((Map<String, Integer>) requestData).get("ageTo");
+		Iterable<Employee> employeesAges = employees.getEmployeesAges(ageFrom, ageTo);
+		return new ResponseJava(OK, (Serializable) employeesAges);
 	}
 
+	@SuppressWarnings("unchecked")
 	private ResponseJava updateCompany(Serializable requestData) {
-		try {
-			long id = (long) ((Map<String, Object>) requestData).get("id");
-			String newCompany = (String) ((Map<String, Object>) requestData).get("newCompany");
-			EmployeesReturnCodes updateCompany = employees.updateCompany(id, newCompany);
-			return new ResponseJava(OK, updateCompany);
-		} catch (Exception e) {
-			return new ResponseJava(UNKNOWN, e.getMessage());
-		}
+		long id = (long) ((Map<String, Object>) requestData).get("id");
+		String newCompany = (String) ((Map<String, Object>) requestData).get("newCompany");
+		EmployeesReturnCodes updateCompany = employees.updateCompany(id, newCompany);
+		return new ResponseJava(OK, updateCompany);
 	}
 
+	@SuppressWarnings("unchecked")
 	private ResponseJava updateSalary(Serializable requestData) {
-		try {
-			long id = (long) ((Map<String, Object>) requestData).get("id");
-			int newSalary = (int) ((Map<String, Object>) requestData).get("newSalary");
-			EmployeesReturnCodes updateSalary = employees.updateSalary(id, newSalary);
-			return new ResponseJava(OK, updateSalary);
-		} catch (Exception e) {
-			return new ResponseJava(UNKNOWN, e.getMessage());
-		}
+		long id = (long) ((Map<String, Object>) requestData).get("id");
+		int newSalary = (int) ((Map<String, Object>) requestData).get("newSalary");
+		EmployeesReturnCodes updateSalary = employees.updateSalary(id, newSalary);
+		return new ResponseJava(OK, updateSalary);
 	}
 
 	private ResponseJava wrongRequest(Serializable requestData) {

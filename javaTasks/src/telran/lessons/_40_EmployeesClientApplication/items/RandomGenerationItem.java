@@ -11,7 +11,7 @@ import telran.lessons._39_MenuItemsInputOutput.api.InputOutput;
 import telran.lessons._40_EmployeesClientApplication.api.EmployeesService;
 import telran.lessons._40_EmployeesClientApplication.dto.Employee;
 
-public class RandomGenerationItem extends EmployeesItem {
+public class RandomGenerationItem extends AbstractEmployeesItem {
 
 	public RandomGenerationItem(EmployeesService employees, InputOutput inputOutput) {
 		super(employees, inputOutput);

@@ -6,7 +6,7 @@ import java.io.IOException;
 import telran.lessons._39_MenuItemsInputOutput.api.InputOutput;
 import telran.lessons._40_EmployeesClientApplication.api.EmployeesService;
 
-public class ExitItem extends EmployeesItem {
+public class ExitItem extends AbstractEmployeesItem {
 
 	public ExitItem(EmployeesService employees, InputOutput inputOutput) {
 		super(employees, inputOutput);
@@ -23,7 +23,7 @@ public class ExitItem extends EmployeesItem {
 			try {
 				((Closeable) employees).close();
 			} catch (IOException e) {
-				throw new RuntimeException(e.getMessage());
+				throw new RuntimeException("Wrong closing" + e.getMessage());
 			}
 		}
 	}

@@ -8,7 +8,7 @@ import telran.lessons._40_EmployeesClientApplication.api.EmployeesService;
 import telran.lessons._40_EmployeesClientApplication.dto.Employee;
 import telran.lessons._40_EmployeesClientApplication.dto.EmployeesReturnCodes;
 
-public class AddEmployeeItem extends EmployeesItem {
+public class AddEmployeeItem extends AbstractEmployeesItem {
 
 	public AddEmployeeItem(EmployeesService employees, InputOutput inputOutput) {
 		super(employees, inputOutput);

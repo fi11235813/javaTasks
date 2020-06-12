@@ -1,6 +1,7 @@
 package telran.lessons._40_EmployeesClientApplication.net.server;
 
 import java.io.EOFException;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
@@ -34,11 +35,10 @@ public class ServerClientJava implements Runnable {
 			}
 		} catch (EOFException e) {
 			System.out.println("client closed connection");
-		}
-
-		catch (Exception e) {
-			System.out.println("illegal closing exception");
-			throw new RuntimeException(e.getMessage());
+		} catch (IOException e) {
+			System.out.println("illegal closing exception " + e.getMessage());
+		} catch (Exception e) {
+			System.out.println("unknown error" + e.getMessage());
 		}
 	}
 }

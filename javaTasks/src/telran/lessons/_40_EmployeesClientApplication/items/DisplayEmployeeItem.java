@@ -5,7 +5,7 @@ import telran.lessons._40_EmployeesClientApplication.api.EmployeesService;
 import telran.lessons._40_EmployeesClientApplication.dto.Employee;
 import telran.lessons._40_EmployeesClientApplication.dto.EmployeesReturnCodes;
 
-public class DisplayEmployeeItem extends EmployeesItem {
+public class DisplayEmployeeItem extends AbstractEmployeesItem {
 
 	public DisplayEmployeeItem(EmployeesService employees, InputOutput inputOutput) {
 		super(employees, inputOutput);

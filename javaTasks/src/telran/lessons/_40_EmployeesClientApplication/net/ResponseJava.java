@@ -17,4 +17,5 @@ public class ResponseJava implements Serializable {
 		this.responseCode = responseCode;
 		this.responseData = responseData;
 	}
+	
 }

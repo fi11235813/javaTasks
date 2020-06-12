@@ -3,7 +3,7 @@ package telran.lessons._40_EmployeesClientApplication.items;
 import telran.lessons._39_MenuItemsInputOutput.api.InputOutput;
 import telran.lessons._40_EmployeesClientApplication.api.EmployeesService;
 
-public class DisplayEmployeesGroupedBySalaryItem extends EmployeesItem {
+public class DisplayEmployeesGroupedBySalaryItem extends AbstractEmployeesItem {
 
 	public DisplayEmployeesGroupedBySalaryItem(EmployeesService employees, InputOutput inputOutput) {
 		super(employees, inputOutput);

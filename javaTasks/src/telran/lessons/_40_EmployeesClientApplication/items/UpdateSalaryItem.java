@@ -7,7 +7,7 @@ import telran.lessons._40_EmployeesClientApplication.api.EmployeesService;
 import telran.lessons._40_EmployeesClientApplication.dto.Employee;
 import telran.lessons._40_EmployeesClientApplication.dto.EmployeesReturnCodes;
 
-public class UpdateSalaryItem extends EmployeesItem {
+public class UpdateSalaryItem extends AbstractEmployeesItem {
 
 	public UpdateSalaryItem(EmployeesService employees, InputOutput inputOutput) {
 		super(employees, inputOutput);
@@ -27,7 +27,6 @@ public class UpdateSalaryItem extends EmployeesItem {
 		
 		int newSalary = inputOutput.inputInteger("Enter new salary [5000-50000]", MIN_SALARY, MAX_SALARY);
 		inputOutput.displayLine(employees.updateSalary(id, newSalary));
-
 	}
 
 }

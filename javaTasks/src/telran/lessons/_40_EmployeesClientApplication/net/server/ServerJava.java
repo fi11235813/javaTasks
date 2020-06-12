@@ -12,6 +12,7 @@ public class ServerJava implements Runnable {
 		this.protocol = protocol;
 		try {
 			serverSocket = new ServerSocket(port);
+			System.out.println("Server is listening on port " + port);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -27,6 +28,5 @@ public class ServerJava implements Runnable {
 		} catch (IOException e) {
 			throw new RuntimeException(e.getMessage());
 		}
-
 	}
 }

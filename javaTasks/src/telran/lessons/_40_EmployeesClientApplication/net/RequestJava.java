@@ -16,6 +16,5 @@ public class RequestJava implements Serializable{
 		this.requestType = requestType;
 		this.requestData = requestData;
 	}
-	
-	
+
 }
