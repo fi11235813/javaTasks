@@ -6,11 +6,9 @@ import java.util.LinkedList;
 public class SingleTrip {
 		
 	public String determineWay(Ticket[] tickets) {
-			var departure = new HashMap<String, String>();
 			var arrival = new HashMap<String, String>();
 			
 			for(Ticket t : tickets) {
-				departure.put(t.DESTINATION, t.SOURSE);
 				arrival.put(t.SOURSE, t.DESTINATION);
 			}
 			
@@ -18,7 +16,7 @@ public class SingleTrip {
 			String destination = null;
 			
 			for(Ticket t : tickets) {
-				if(!departure.containsKey(t.SOURSE)) {
+				if(!arrival.containsValue(t.SOURSE)) {
 					destination = t.DESTINATION;
 					ticketList.add(t.SOURSE);
 					break;
