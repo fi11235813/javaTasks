@@ -15,15 +15,15 @@ public class ThreadsRaceAppl {
 
 		Runner[] runners = new Runner[numberOfRunners];
 		for (int i = 0; i < runners.length; i++) {
-			runners[i] = new Runner(i + 1, distance);
+			runners[i] = new Runner(distance);
 		}
 
 		for (int i = 0; i < runners.length; i++) {
 			runners[i].start();
 		}
 
-		while (Runner.activeCount() > 1) {
-
+		for (int i = 0; i < runners.length; i++) {
+			runners[i].join();
 		}
 
 		System.out.println("Congratulations " + Runner.winner + " you are the champion!");
@@ -36,7 +36,6 @@ public class ThreadsRaceAppl {
 				res = Integer.parseInt(in.readLine());
 
 			} catch (NumberFormatException e) {
-
 				System.out.println("Not a number, try again...");
 			} catch (IOException e) {
 				// TODO Auto-generated catch block

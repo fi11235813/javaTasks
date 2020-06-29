@@ -1,14 +1,13 @@
 package telran.lessons._44_ThreadsRace;
 
 public class Runner extends Thread {
-	private final int N;
 	private final int MIN_SLEEP_TIME = 2;
 	private final int MAX_SLEEP_TIME = 5;
 	private final int DISTANCE;
-	public static String winner = null;
+	private final String ID = getName();
+	volatile static String winner = null;
 
-	public Runner(int n, int d) {
-		this.N = n;
+	public Runner(int d) {
 		this.DISTANCE = d;
 	}
 
@@ -16,19 +15,22 @@ public class Runner extends Thread {
 	public void run() {
 		int deltaSleep = MAX_SLEEP_TIME - MIN_SLEEP_TIME + 1;
 		for (int i = 0; i < DISTANCE; i++) {
-			System.out.println("Runner" + N);
+			System.out.println(ID);
 			try {
 				sleep((long) (MIN_SLEEP_TIME + Math.random() * deltaSleep));
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 
-		if (winner == null) {
-			winner = "Runner" + N;
-		}
+		setWinner(ID);
+	}
 
+	private static synchronized void setWinner(String id) {
+		if (winner == null) {
+			System.err.println(id);
+			winner = id;
+		}
 	}
 
 }
